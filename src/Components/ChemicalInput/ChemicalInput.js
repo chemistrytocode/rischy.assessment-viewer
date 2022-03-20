@@ -19,7 +19,7 @@ const chemicalStockOptions = [
 const ChemicalInput = () => (
   <Form>
     <Form.Field>
-      <h1>Chemical Input:</h1>
+      <h1>Chemical Input</h1>
       <label>Enter a chemical name in the search below:</label>
       <Dropdown
         placeholder='Enter a chemical...'
