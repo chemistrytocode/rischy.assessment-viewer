@@ -20,7 +20,7 @@ const EmergencyActionsTable = () => (
                 </Table.Row>
                 <Table.Row>
                     <Table.Cell>Swallowed</Table.Cell>
-                    <Table.Cell>Wash out mout, do not induce vomitting</Table.Cell>
+                    <Table.Cell>Wash out mouth, do not induce vomitting</Table.Cell>
                 </Table.Row>
             </Table.Body>
         </Table>
