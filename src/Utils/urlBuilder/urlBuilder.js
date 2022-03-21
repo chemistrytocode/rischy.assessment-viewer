@@ -1,3 +1,13 @@
+class AssessmentGenerator {
+    static get baseUrl() {
+        return 'https://localhost:3001'
+    };
+
+    static riskAssessment() {
+        return `${this.baseUrl}/risk-assessment`;
+    }
+}
+
 class ChemicalHandler {
     static get baseUrl() {
         return 'https://localhost:3002'
@@ -6,14 +16,11 @@ class ChemicalHandler {
     static stock() {
         return `${this.baseUrl}/stock`;
     }
-
-    static hazards(chemicalIds) {
-        return `${this.baseUrl}/hazards?ids=${chemicalIds}`;
-    }
 }
 
 var urlBuilder = {
-    chemicalHandler: ChemicalHandler,
+    assessmentGenerator: AssessmentGenerator,
+    chemicalHandler: ChemicalHandler
 }
 
 export default urlBuilder;
