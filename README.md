@@ -14,3 +14,5 @@ Iteration ideas:
 11. Remove removes a chemical.
 12. Selecting adds a chemical.
 13. Contact links
+14. Concentration by dropdown selection
+15. Concentration by number input and lookup (Final Iteration)
