@@ -7,9 +7,8 @@ const stateIcons = {
 export const buildChemicalStockOptions = (stockData) => (
     stockData.map((stock, index) => {
         return {
-            id: stock.id,
             key: index,
-            value: stock.name,
+            value: { id: stock.id, state: stock.state, value: stock.name},
             icon: stateIcons[stock.state],
             text: stock.name
         }

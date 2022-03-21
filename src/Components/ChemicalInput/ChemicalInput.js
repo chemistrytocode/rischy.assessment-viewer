@@ -1,12 +1,17 @@
 import React from 'react'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Form, Dropdown } from 'semantic-ui-react';
+
+import { addChemicalToSelection } from '../../Redux/Actions/chemicalActions';
 
 import { buildChemicalStockOptions } from '../../Utils/stockOptionsBuilder/stockOptionsBuilder';
 
 const ChemicalInput = () => {
+  const dispatch = useDispatch();
   const stockData = useSelector(state => state.stock);
   const chemicalStockOptions = buildChemicalStockOptions(stockData);
+
+  const handleChange = (e, { value }) => addChemicalToSelection(dispatch, { value });
 
   return (
     <Form>
@@ -18,6 +23,7 @@ const ChemicalInput = () => {
           fluid
           search
           selection
+          onChange={handleChange}
           options={chemicalStockOptions}
         />
       </Form.Field>
