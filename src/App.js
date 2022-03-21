@@ -9,12 +9,12 @@ import './App.css';
 
 function App() {
   return (
-    <div>
+    <>
       <Header />
       <ChemicalInputPage />
       <RiskAssessmentPage />
       <Footer />
-    </div>
+    </>
   );
 }
 

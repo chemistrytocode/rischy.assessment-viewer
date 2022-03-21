@@ -19,7 +19,7 @@ const EmergencyActionsTable = () => (
                     <Table.Cell>Flood the eye for 10 minutes with water</Table.Cell>
                 </Table.Row>
                 <Table.Row>
-                    <Table.Cell>Swalloed</Table.Cell>
+                    <Table.Cell>Swallowed</Table.Cell>
                     <Table.Cell>Wash out mout, do not induce vomitting</Table.Cell>
                 </Table.Row>
             </Table.Body>

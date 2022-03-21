@@ -7,7 +7,6 @@ const Header = () => (
             <Container>
                 <Item as='a'>
                     <Icon name='lab' size='large' />
-                    {/* <Image size='mini' src='/logo.png' style={{ marginRight: '1.5em' }} /> */}
                     Welcome to Rischy, the Chemical Risk Assessment Generator
                 </Item>
                 <Item as='a'>
