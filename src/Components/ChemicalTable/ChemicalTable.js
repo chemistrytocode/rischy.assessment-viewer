@@ -1,39 +1,43 @@
 import React from 'react'
-import { Button, Table } from 'semantic-ui-react'
+import { useDispatch } from 'react-redux';
+import { Button, Table } from 'semantic-ui-react';
 
-const ChemicalTable = () => (
-  <Table celled selectable striped>
-    <Table.Header>
-      <Table.Row>
-        <Table.HeaderCell>Chemical</Table.HeaderCell>
-        <Table.HeaderCell width={3} textAlign='center'>State/Concentration</Table.HeaderCell>
-        <Table.HeaderCell width={3}></Table.HeaderCell>
-      </Table.Row>
-    </Table.Header>
+import { removeChemicalFromSelection } from '../../Redux/Actions/chemicalActions'
 
-    <Table.Body>
-      <Table.Row>
-        <Table.Cell>Barium Chloride</Table.Cell>
-        <Table.Cell textAlign='center'>Solid</Table.Cell>
-        <Table.Cell><Button negative fluid>Remove</Button></Table.Cell>
-      </Table.Row>
-      <Table.Row>
-        <Table.Cell>Barium Nitrate</Table.Cell>
-        <Table.Cell textAlign='center'>Solid</Table.Cell>
-        <Table.Cell><Button negative fluid>Remove</Button></Table.Cell>
-      </Table.Row>
-      <Table.Row>
-        <Table.Cell>Hydrochloric Acid</Table.Cell>
-        <Table.Cell textAlign='center'>2 mol dm-3</Table.Cell>
-        <Table.Cell><Button negative fluid>Remove</Button></Table.Cell>
-      </Table.Row>
-      <Table.Row negative>
-        <Table.Cell>White Phosphorus <p>(Dangerous)</p></Table.Cell>
-        <Table.Cell textAlign='center'>Solid</Table.Cell>
-        <Table.Cell><Button negative fluid>Remove</Button></Table.Cell>
-      </Table.Row>
-    </Table.Body>
-  </Table>
-)
+const ChemicalTable = ({ selectedChemicals }) => {
+  const dispatch = useDispatch();
 
-export default ChemicalTable
+  const onClick = (chemical) => removeChemicalFromSelection(dispatch, chemical);
+
+  const generateTableRow = (chemical) => (
+    <Table.Row>
+      <Table.Cell>{chemical.value}</Table.Cell>
+      <Table.Cell textAlign='center'>{chemical.state}</Table.Cell>
+      <Table.Cell>
+        <Button negative fluid onClick={() => onClick(chemical)}>
+          Remove
+        </Button>
+      </Table.Cell>
+    </Table.Row>
+  );
+
+  if (selectedChemicals.length < 1) return null;
+
+  return (
+    <Table celled selectable striped>
+      <Table.Header>
+        <Table.Row>
+          <Table.HeaderCell>Chemical</Table.HeaderCell>
+          <Table.HeaderCell width={3} textAlign='center'>State/Concentration</Table.HeaderCell>
+          <Table.HeaderCell width={3}></Table.HeaderCell>
+        </Table.Row>
+      </Table.Header>
+
+      <Table.Body>
+        {selectedChemicals.map((chemical) => generateTableRow(chemical))}
+      </Table.Body>
+    </Table>
+  )
+}
+
+export default ChemicalTable;

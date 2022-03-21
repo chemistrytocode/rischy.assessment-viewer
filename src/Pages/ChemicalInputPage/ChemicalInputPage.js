@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Container, Segment } from 'semantic-ui-react'
 
 import ChemicalInputQuestion from '../../Components/ChemicalInput/ChemicalInput';
@@ -14,12 +14,14 @@ const ChemicalInput = () => {
         getStockData(dispatch)
     }, [dispatch])
 
+    const selectedChemicals = useSelector(state => state.selectedChemicals);
+  
     return (
         <Segment>
             <Container>
                 <ChemicalInputQuestion />
-                <ChemicalTable />
-                <SubmitButton />
+                <ChemicalTable selectedChemicals={selectedChemicals}/>
+                <SubmitButton selectedChemicals={selectedChemicals}/>
             </Container>
         </Segment>
     );

@@ -12,6 +12,11 @@ const chemicalReducer = ({ selectedChemicals } = []) => (state = selectedChemica
                 payload,
             ];
         }
+        case chemicalActionTypes.REMOVE_CHEMICAL: {
+            return [
+                ...chemicalState.filter(chemical => !chemical.id.includes(payload))
+            ]
+        }
         default:
             return chemicalState;
     }

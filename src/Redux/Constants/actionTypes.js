@@ -3,5 +3,6 @@ export const stockActionTypes = {
   };
 
 export const chemicalActionTypes = {
-    ADD_CHEMICAL: 'ADD_CHEMICAL'
+    ADD_CHEMICAL: 'ADD_CHEMICAL',
+    REMOVE_CHEMICAL: 'REMOVE_CHEMICAL'
   };
