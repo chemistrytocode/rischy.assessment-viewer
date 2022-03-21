@@ -1,24 +1,20 @@
-import logo from './logo.svg';
+import React from 'react';
+
+import Header from './Components/Header/Header';
+import ChemicalInputPage from './Pages/ChemicalInputPage/ChemicalInputPage';
+import RiskAssessmentPage from './Pages/RiskAssessmentPage/RiskAssessmentPage';
+import Footer from './Components/Footer/Footer';
+
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hello! This is the start of the rischy.assessment-viewer!.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <ChemicalInputPage />
+      <RiskAssessmentPage />
+      <Footer />
+    </>
   );
 }
 
