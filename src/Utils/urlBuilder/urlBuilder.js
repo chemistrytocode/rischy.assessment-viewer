@@ -3,8 +3,8 @@ class AssessmentGenerator {
         return 'https://localhost:3001'
     };
 
-    static riskAssessment() {
-        return `${this.baseUrl}/risk-assessment`;
+    static riskAssessment(chemicalIdsQueryString) {
+        return `${this.baseUrl}/risk-assessment?chemicalIds=${chemicalIdsQueryString}`;
     }
 }
 

@@ -1,9 +1,9 @@
 import urlBuilder from '../urlBuilder/urlBuilder';
 
-const fetchRiskAssessment = async () => {
+const fetchRiskAssessment = async (chemicalIdsQueryString) => {
     // TODO: Next iteration 
     // Static call to is made here (/risk-assessment) need to send selected chemicals in next iteration
-    const url = urlBuilder.assessmentGenerator.riskAssessment();
+    const url = urlBuilder.assessmentGenerator.riskAssessment(chemicalIdsQueryString);
 
     try {
         const response = await fetch(url);

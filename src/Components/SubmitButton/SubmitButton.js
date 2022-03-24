@@ -10,7 +10,7 @@ const SubmitButton = ({ selectedChemicals }) => {
     if (selectedChemicals.length < 1) return null;
 
     const onClick = () => {
-        submitChemicalsToAssessmentGenerator(dispatch);
+        submitChemicalsToAssessmentGenerator(selectedChemicals, dispatch);
     }
 
     return (
