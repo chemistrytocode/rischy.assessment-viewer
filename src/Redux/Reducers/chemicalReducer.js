@@ -1,4 +1,5 @@
 import { chemicalActionTypes } from '../Constants/actionTypes.js';
+import { isChemicalAreadyInState, sortChemicalsByName } from '../../Utils/reduxHelpers/reduxHelpers';
 
 const initialChemicalState = [];
 
@@ -7,10 +8,9 @@ const chemicalReducer = ({ selectedChemicals } = []) => (state = selectedChemica
 
     switch (type) {
         case chemicalActionTypes.ADD_CHEMICAL: {
-            return [
-                ...chemicalState,
-                payload,
-            ];
+            if (isChemicalAreadyInState(chemicalState, payload)) return chemicalState;
+            const newState = [...chemicalState, payload];
+            return sortChemicalsByName(newState);
         }
         case chemicalActionTypes.REMOVE_CHEMICAL: {
             return [
