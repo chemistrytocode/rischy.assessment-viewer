@@ -18,15 +18,22 @@ const icons = {
   Explosive: Explosive,
   Flammable: Flammable,
   Health: Health,
-  Moderate: Moderate,
+  Harmful: Moderate,
+  Irritant: Moderate,
   Oxidising: Oxidising,
   Toxic: Toxic,
 };
 
-const SvgImage = ({ svgName, ...props }) => React.createElement(
-  icons[svgName],
-  props,
-);
+const SvgImage = ({ svgName, ...props }) => {
+
+  const iconKeys = Object.keys(icons);
+  if(!iconKeys.includes(svgName)) return null;
+
+  return React.createElement(
+    icons[svgName],
+    props,
+  )
+};
 
 SvgImage.propTypes = {
   svgName: propTypes.string.isRequired,

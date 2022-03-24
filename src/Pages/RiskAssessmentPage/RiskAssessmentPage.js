@@ -12,11 +12,13 @@ const RiskAssessmentPage = () => {
 
     if(Object.keys(riskAssessment) < 1) return null;
 
+    const { hazardTableChemicals, controlMeasures, emergencyActions } = riskAssessment;
+
     return (
         <Segment>
             <Container textAlign='center'>
-                <HazardTable />
-                <ControlMeasuresAndEmergencyActions />
+                <HazardTable hazardChemicals={hazardTableChemicals} />
+                <ControlMeasuresAndEmergencyActions controlMeasures={controlMeasures} emergencyActions={emergencyActions}  />
                 <Divider inverted />
                 <PrinterAndStartAgain />
             </Container>

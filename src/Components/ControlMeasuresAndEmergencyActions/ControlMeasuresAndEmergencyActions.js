@@ -4,15 +4,15 @@ import { Grid } from 'semantic-ui-react'
 import ControlMeasuresTable from '../ControlMeasuresTable/ControlMeasuresTable';
 import EmergencyActionsTable from '../EmergencyActionsTable/EmergencyActionsTable';
 
-const ControlMeasuresAndEmergyActions = () => (
+const ControlMeasuresAndEmergyActions = ({ controlMeasures, emergencyActions}) => (
     <Grid columns={2} stackable textAlign='center'>
         <Grid.Row verticalAlign='middle'>
             <Grid.Column>
-                <ControlMeasuresTable />
+                <ControlMeasuresTable controlMeasures={controlMeasures} />
             </Grid.Column>
 
             <Grid.Column>
-                <EmergencyActionsTable />
+                <EmergencyActionsTable emergencyActions={emergencyActions} />
             </Grid.Column>
         </Grid.Row>
     </Grid>
