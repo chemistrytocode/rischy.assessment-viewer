@@ -1,18 +1,11 @@
 # rischy.assessment-viewer
 
 Iteration ideas:
-1. Reusable GridLayout and TableGenerator components.
-2. Seperate pages.
-3. Redux
-4. Call `chemical-handler` and populate dropdown.
-5. Submit calls `assessment-generator`.
-6. Submit changes pages.
-7. Tests!
-8. Flag dangerous chemicals.
-9. Start again loads Risk Assessment Page
-10. Print loads print options.
-11. Remove removes a chemical.
-12. Selecting adds a chemical.
-13. Contact links
-14. Concentration by dropdown selection
-15. Concentration by number input and lookup (Final Iteration)
+1. Reusable GridLayout components.
+2. Reusable fetch method
+3. Tests!
+4. Flag dangerous chemicals.
+5. Print loads print options.
+6. Concentration by dropdown selection (Nice to have)
+7. Concentration by number input and lookup (Extra nice to have)
+8. Stock upload (Nice to have)
