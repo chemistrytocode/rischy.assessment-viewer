@@ -11,15 +11,15 @@ const Footer = () => (
             <p>Developed by Paul Ayling</p>
             <Divider inverted />
             <List horizontal inverted link size='small'>
-                <Item as='a' href='#'>
+                <Item as='a' href='mailto:chemistrytocode@gmail.com'>
                     <Icon name='mail' />
                     Contact
                 </Item>
-                <Item as='a' href='#'>
+                <Item as='a' target="_blank" href='https://www.linkedin.com/in/paul-ayling-ba1913170'>
                     <Icon name='linkedin' />
                     LinkedIn
                 </Item>
-                <Item as='a' href='#'>
+                <Item as='a' target="_blank" href='https://github.com/chemistrytocode'>
                     <Icon name='github' />
                     GitHub
                 </Item>
