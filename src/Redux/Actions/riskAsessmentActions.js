@@ -1,4 +1,4 @@
-import { riskAssessmentActionTypes } from '../../Redux/Constants/actionTypes';
+import { riskAssessmentActionTypes } from '../../Constants/actionTypes';
 import fetchRiskAssessment from '../../Utils/fetchRiskAssessment/fetchRiskAssessment';
 import chemicalIdsQueryStringBuilder from '../../Utils/chemicalIdsQueryStringBuilder/chemicalIdsQueryStringBuilder';
 

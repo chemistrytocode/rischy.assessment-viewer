@@ -1,8 +1,9 @@
-import React from 'react'
-import { Header, Label, Table } from 'semantic-ui-react'
+import React from 'react';
+import { Header, Label, Table } from 'semantic-ui-react';
+import { controlMeasuresPropTypes } from '../../Constants/proptypes';
+
 
 const ControlMeasuresTable = ({ controlMeasures }) => {
-
     const generateTableRows = (controlMeasure) => (
         <Table.Row>
             <Table.Cell>{controlMeasure}</Table.Cell>
@@ -27,6 +28,10 @@ const ControlMeasuresTable = ({ controlMeasures }) => {
             </Table>
         </>
     )
-}
+};
+
+ControlMeasuresTable.propTypes = {
+    controlMeasures: controlMeasuresPropTypes.isRequired,
+  };
 
 export default ControlMeasuresTable;

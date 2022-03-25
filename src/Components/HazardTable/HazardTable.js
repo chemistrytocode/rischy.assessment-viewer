@@ -1,5 +1,7 @@
 import React from 'react'
 import { Header, Label, Table } from 'semantic-ui-react'
+import { hazardChemicalsPropTypes } from '../../Constants/proptypes';
+
 
 import SvgImage from '../SvgImage/SvgImage';
 
@@ -38,5 +40,10 @@ const HazardTable = ({ hazardChemicals }) => {
     </>
   )
 }
+
+
+HazardTable.propTypes = {
+  hazardChemicals: hazardChemicalsPropTypes.isRequired,
+};
 
 export default HazardTable

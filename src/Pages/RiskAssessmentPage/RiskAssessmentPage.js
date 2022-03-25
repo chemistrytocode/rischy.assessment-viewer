@@ -4,6 +4,7 @@ import { Divider, Container, Segment } from 'semantic-ui-react'
 import HazardTable from '../../Components/HazardTable/HazardTable';
 import ControlMeasuresAndEmergencyActions from '../../Components/ControlMeasuresAndEmergencyActions/ControlMeasuresAndEmergencyActions';
 import PrinterAndStartAgain from '../../Components/PrinterAndStartAgain/PrinterAndStartAgain';
+import { riskAssessmentPropTypes } from '../../Constants/proptypes';
 
 const RiskAssessmentPage = ({ riskAssessment }) => {
     const { hazardTableChemicals, controlMeasures, emergencyActions } = riskAssessment;
@@ -19,5 +20,9 @@ const RiskAssessmentPage = ({ riskAssessment }) => {
         </Segment>
     )
 }
+
+RiskAssessmentPage.propTypes = {
+    riskAssessment: riskAssessmentPropTypes.isRequired,
+  };
 
 export default RiskAssessmentPage;

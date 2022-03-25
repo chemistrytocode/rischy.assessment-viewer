@@ -1,4 +1,4 @@
-import { chemicalActionTypes } from '../../Redux/Constants/actionTypes';
+import { chemicalActionTypes } from '../../Constants/actionTypes';
 
 export const addChemicalToSelection = (dispatch, selectedChemical) => {
     const { value } = selectedChemical;

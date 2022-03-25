@@ -2,24 +2,28 @@ import React from 'react'
 import { useDispatch } from 'react-redux';
 import { Button, Table } from 'semantic-ui-react';
 
-import { removeChemicalFromSelection } from '../../Redux/Actions/chemicalActions'
+import { removeChemicalFromSelection } from '../../Redux/Actions/chemicalActions';
+import { selectedChemicalsPropTypes } from '../../Constants/proptypes';
 
 const ChemicalTable = ({ selectedChemicals }) => {
   const dispatch = useDispatch();
 
   const onClick = (chemical) => removeChemicalFromSelection(dispatch, chemical);
 
-  const generateTableRow = (chemical) => (
-    <Table.Row>
-      <Table.Cell>{chemical.value}</Table.Cell>
-      <Table.Cell textAlign='center'>{chemical.state}</Table.Cell>
-      <Table.Cell>
-        <Button negative fluid onClick={() => onClick(chemical)}>
-          Remove
-        </Button>
-      </Table.Cell>
-    </Table.Row>
-  );
+  const generateTableRow = (chemical) => {
+    const { id, state, value } = chemical;
+    return (
+      <Table.Row key={id}>
+        <Table.Cell>{value}</Table.Cell>
+        <Table.Cell textAlign='center'>{state}</Table.Cell>
+        <Table.Cell>
+          <Button negative fluid onClick={() => onClick(chemical)}>
+            Remove
+          </Button>
+        </Table.Cell>
+      </Table.Row>
+    )
+  }
 
   if (selectedChemicals.length < 1) return null;
 
@@ -40,4 +44,10 @@ const ChemicalTable = ({ selectedChemicals }) => {
   )
 }
 
+ChemicalTable.propTypes = {
+  selectedChemicals: selectedChemicalsPropTypes.isRequired,
+};
+
 export default ChemicalTable;
+
+

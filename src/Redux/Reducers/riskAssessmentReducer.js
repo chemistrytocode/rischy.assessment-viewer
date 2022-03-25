@@ -1,4 +1,4 @@
-import { riskAssessmentActionTypes } from '../Constants/actionTypes.js';
+import { riskAssessmentActionTypes } from '../../Constants/actionTypes.js';
 
 const initialRiskAssessmentState = {};
 

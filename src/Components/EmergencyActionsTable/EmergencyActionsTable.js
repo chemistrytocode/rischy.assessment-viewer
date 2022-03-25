@@ -1,5 +1,6 @@
-import React from 'react'
-import { Header, Label, Table } from 'semantic-ui-react'
+import React from 'react';
+import { Header, Label, Table } from 'semantic-ui-react';
+import { emergencyActionsPropTypes } from '../../Constants/proptypes';
 
 const EmergencyActionsTable = ({ emergencyActions }) => {
     const generateTableRows = (emergencyAction) => {
@@ -32,5 +33,9 @@ const EmergencyActionsTable = ({ emergencyActions }) => {
         </>
     )
 }
+
+EmergencyActionsTable.propTypes = {
+    emergencyActions: emergencyActionsPropTypes.isRequired,
+  };
 
 export default EmergencyActionsTable;

@@ -1,4 +1,4 @@
-import { chemicalActionTypes } from '../Constants/actionTypes.js';
+import { chemicalActionTypes } from '../../Constants/actionTypes.js';
 import { isChemicalAreadyInState, sortChemicalsByName } from '../../Utils/reduxHelpers/reduxHelpers';
 
 const initialChemicalState = [];
