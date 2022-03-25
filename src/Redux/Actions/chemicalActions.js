@@ -1,6 +1,4 @@
-import { chemicalActionTypes, riskAssessmentActionTypes } from '../../Redux/Constants/actionTypes';
-import fetchRiskAssessment from '../../Utils/fetchRiskAssessment/fetchRiskAssessment';
-import chemicalIdsQueryStringBuilder from '../../Utils/chemicalIdsQueryStringBuilder/chemicalIdsQueryStringBuilder';
+import { chemicalActionTypes } from '../../Redux/Constants/actionTypes';
 
 export const addChemicalToSelection = (dispatch, selectedChemical) => {
     const { value } = selectedChemical;
@@ -12,9 +10,6 @@ export const removeChemicalFromSelection = (dispatch, selectedChemical) => {
     dispatch({ type: chemicalActionTypes.REMOVE_CHEMICAL, payload: id });
 };
 
-export const submitChemicalsToAssessmentGenerator = async (selectedChemicals, dispatch) => {
-    const chemicalIdsQueryString = chemicalIdsQueryStringBuilder(selectedChemicals);
-    const riskAssessment = await fetchRiskAssessment(chemicalIdsQueryString);
-    dispatch({ type: riskAssessmentActionTypes.SET_RISK_ASSESSMENT, payload: riskAssessment });  
+export const clearChemicalsFromSelection = (dispatch) => {
+    dispatch({ type: chemicalActionTypes.CLEAR_CHEMICALS });
 };
-

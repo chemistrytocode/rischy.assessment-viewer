@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux';
 import { Container, Button } from 'semantic-ui-react';
 
-import { submitChemicalsToAssessmentGenerator } from '../../Redux/Actions/chemicalActions';
+import { generateRiskAssessment } from '../../Redux/Actions/riskAsessmentActions';
 
 const SubmitButton = ({ selectedChemicals }) => {
     const dispatch = useDispatch();
@@ -10,7 +10,7 @@ const SubmitButton = ({ selectedChemicals }) => {
     if (selectedChemicals.length < 1) return null;
 
     const onClick = () => {
-        submitChemicalsToAssessmentGenerator(selectedChemicals, dispatch);
+        generateRiskAssessment(selectedChemicals, dispatch);
     }
 
     return (

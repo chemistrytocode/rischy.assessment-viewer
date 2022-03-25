@@ -12,6 +12,9 @@ const riskAssessmentReducer = ({ riskAssessment } = {}) => (state = riskAssessme
                 ...payload
             }
         }
+        case riskAssessmentActionTypes.CLEAR_RISK_ASSESSMENT: {
+            return {}
+        }
         default:
             return riskAssessmentState;
     }

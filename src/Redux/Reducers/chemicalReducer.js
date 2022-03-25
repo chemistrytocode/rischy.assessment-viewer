@@ -10,12 +10,16 @@ const chemicalReducer = ({ selectedChemicals } = []) => (state = selectedChemica
         case chemicalActionTypes.ADD_CHEMICAL: {
             if (isChemicalAreadyInState(chemicalState, payload)) return chemicalState;
             const newState = [...chemicalState, payload];
-            return sortChemicalsByName(newState);
+            const sortedState = sortChemicalsByName(newState);
+            return sortedState;
         }
         case chemicalActionTypes.REMOVE_CHEMICAL: {
             return [
                 ...chemicalState.filter(chemical => !chemical.id.includes(payload))
             ]
+        }
+        case chemicalActionTypes.CLEAR_CHEMICALS: {
+            return []
         }
         default:
             return chemicalState;
