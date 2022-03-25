@@ -1,6 +1,6 @@
 import { riskAssessmentActionTypes } from '../Constants/actionTypes.js';
 
-const initialRiskAssessmentState = [];
+const initialRiskAssessmentState = {};
 
 const riskAssessmentReducer = ({ riskAssessment } = {}) => (state = riskAssessment, { type, payload }) => {
     const riskAssessmentState = state || initialRiskAssessmentState;

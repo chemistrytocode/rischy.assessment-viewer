@@ -1,26 +1,28 @@
 import React from 'react'
-import { Container, List, Segment, Divider, Icon } from 'semantic-ui-react'
+import { Container, List, Item, Segment, Divider, Icon } from 'semantic-ui-react'
+
+import './Footer.css';
 
 const Footer = () => (
-    <Segment inverted vertical style={{ margin: '50px 0', padding: '15px 0', background: 'black' }}>
+    <Segment inverted vertical className="Footer">
         <Container textAlign='center'>
             <Icon name='lab' size='large' />
             <p>Rischy</p>
             <p>Developed by Paul Ayling</p>
             <Divider inverted />
             <List horizontal inverted link size='small'>
-                <List.Item as='a' href='#'>
-                    <List.Icon name='mail' />
+                <Item as='a' href='#'>
+                    <Icon name='mail' />
                     Contact
-                </List.Item>
-                <List.Item as='a' href='#'>
-                    <List.Icon name='linkedin' />
+                </Item>
+                <Item as='a' href='#'>
+                    <Icon name='linkedin' />
                     LinkedIn
-                </List.Item>
-                <List.Item as='a' href='#'>
-                    <List.Icon name='github' />
+                </Item>
+                <Item as='a' href='#'>
+                    <Icon name='github' />
                     GitHub
-                </List.Item>
+                </Item>
             </List>
         </Container>
     </Segment>
