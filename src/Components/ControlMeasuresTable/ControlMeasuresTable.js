@@ -4,12 +4,17 @@ import { controlMeasuresPropTypes } from '../../Constants/proptypes';
 
 
 const ControlMeasuresTable = ({ controlMeasures }) => {
-    const generateTableRows = (controlMeasure) => (
-        <Table.Row>
-            <Table.Cell>{controlMeasure}</Table.Cell>
-        </Table.Row>
-    );
-    
+    const generateTableRows = (controlMeasure) => {
+        const { control = '', chemicals = '' } = controlMeasure;
+
+        return (
+            <Table.Row>
+                <Table.Cell><Header as="h3">{control}</Header></Table.Cell>
+                <Table.Cell>{chemicals.map(chemical => <p>{chemical}</p>)}</Table.Cell>
+            </Table.Row>
+        )
+    }
+
     return (
         <>
             <Header as='h1'>Control Measures</Header>
@@ -19,6 +24,7 @@ const ControlMeasuresTable = ({ controlMeasures }) => {
                 <Table.Header>
                     <Table.Row>
                         <Table.HeaderCell>Control Measures</Table.HeaderCell>
+                        <Table.HeaderCell>Affected Chemicals</Table.HeaderCell>
                     </Table.Row>
                 </Table.Header>
 
@@ -32,6 +38,6 @@ const ControlMeasuresTable = ({ controlMeasures }) => {
 
 ControlMeasuresTable.propTypes = {
     controlMeasures: controlMeasuresPropTypes.isRequired,
-  };
+};
 
 export default ControlMeasuresTable;
