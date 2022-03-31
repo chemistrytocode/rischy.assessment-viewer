@@ -47,7 +47,14 @@ export const emergencyActionsPropTypes = propTypes.shape({
   defaultEmergencyActions: defaultEmergencyActionsPropTypes,
   chemicalEmergencyActions: chemicalEmergencyActionsPropTypes,
   escalationStatement: escalationStatementPropType
-})
+});
+
+// Disposal Recommendations
+export const disposalRecommendationsPropTypes = propTypes.arrayOf(propTypes.shape({
+  key: propTypes.string.isRequired,
+  instructions: propTypes.string.isRequired,
+  chemicals: propTypes.arrayOf(propTypes.string).isRequired
+}));
 
 // Risk Assessment
 export const riskAssessmentPropTypes = propTypes.shape({

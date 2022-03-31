@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header, Label, Table, Button, Icon } from 'semantic-ui-react';
+import { Header, Label, Table } from 'semantic-ui-react';
 import { emergencyActionsPropTypes } from '../../Constants/proptypes';
 
 const EmergencyActionsTable = ({ emergencyActions }) => {
@@ -48,24 +48,22 @@ const EmergencyActionsTable = ({ emergencyActions }) => {
 
     const generateEscalationStatement = (escalationStatement) => (
         <Table.Row>
-            <Table.HeaderCell colSpan='4' textAlign='center'>
-                <Header as="h3">{escalationStatement}</Header>
-            </Table.HeaderCell>
+            <Table.Cell textAlign='center'><Header as="h3">{escalationStatement}</Header></Table.Cell>
         </Table.Row>
     );
 
     console.log('chemicalEmergencyActions', chemicalEmergencyActions);
 
     return (
-        <>d
+        <>
             <Header as='h1'>Emergency Actions</Header>
             <Label color='red' pointing="below" size="large">If the worst occurs follow these directions:</Label>
             <Table celled selectable striped color="red">
                 <Table.Header>
                     <Table.Row>
-                        <Table.HeaderCell>Emergency</Table.HeaderCell>
-                        <Table.HeaderCell>Action</Table.HeaderCell>
-                        <Table.HeaderCell>Action Notes</Table.HeaderCell>
+                        <Table.HeaderCell><Header as="h2">Emergency</Header></Table.HeaderCell>
+                        <Table.HeaderCell textAlign='center'><Header as="h2">Action</Header></Table.HeaderCell>
+                        <Table.HeaderCell><Header as="h2">Action&nbsp;Notes</Header></Table.HeaderCell>
                     </Table.Row>
                 </Table.Header>
 

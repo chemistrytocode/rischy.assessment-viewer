@@ -20,11 +20,11 @@ const ControlMeasuresTable = ({ controlMeasures }) => {
             <Header as='h1'>Control Measures</Header>
             <Label color='blue' pointing="below" size="large">Take note of the following precautionary measures:</Label>
             <p></p>
-            <Table celled selectable striped>
+            <Table celled selectable striped color="blue">
                 <Table.Header>
                     <Table.Row>
-                        <Table.HeaderCell>Control Measures</Table.HeaderCell>
-                        <Table.HeaderCell>Affected Chemicals</Table.HeaderCell>
+                        <Table.HeaderCell><Header as="h2">Control&nbsp;Measures</Header></Table.HeaderCell>
+                        <Table.HeaderCell><Header as="h2">Affected&nbsp;Chemicals</Header></Table.HeaderCell>
                     </Table.Row>
                 </Table.Header>
 
