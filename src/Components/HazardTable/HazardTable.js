@@ -2,7 +2,6 @@ import React from 'react'
 import { Header, Label, Table } from 'semantic-ui-react'
 import { hazardChemicalsPropTypes } from '../../Constants/proptypes';
 
-
 import SvgImage from '../SvgImage/SvgImage';
 
 const HazardTable = ({ hazardChemicals }) => {
@@ -24,7 +23,7 @@ const HazardTable = ({ hazardChemicals }) => {
 
   return (
     <>
-      <Header as='h1'>Risk Assessment</Header>
+      <Header as='h1' className="HazardTableTitle">Hazard Table</Header>
       <Label color='orange' pointing="below" size="large">The following risk assessment was generated from your provided chemicals:</Label>
       <Table celled selectable striped color="orange">
         <Table.Header>

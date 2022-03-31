@@ -21,7 +21,7 @@ const DisosalRecommendationsTable = ({ disposalRecommendations }) => {
 
     return (
         <>
-            <Header as='h1'>Disposal Recommendations</Header>
+            <Header as='h1' className="DisposalRecommendationsTitle">Disposal Recommendations</Header>
             <Label color='violet' pointing="below" size="large">Take note of the following precautionary measures:</Label>
             <p></p>
             <Table celled selectable striped color="violet"> 
