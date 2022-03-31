@@ -1,4 +1,4 @@
-import { stockActionTypes } from '../Constants/actionTypes.js';
+import { stockActionTypes } from '../../Constants/actionTypes.js';
 
 const initialStockState = [];
 

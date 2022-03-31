@@ -1,30 +1,26 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import React from 'react'
 import { Container, Segment } from 'semantic-ui-react'
 
-import ChemicalInputQuestion from '../../Components/ChemicalInput/ChemicalInput';
+import ChemicalInput from '../../Components/ChemicalInput/ChemicalInput';
 import ChemicalTable from '../../Components/ChemicalTable/ChemicalTable';
 import SubmitButton from '../../Components/SubmitButton/SubmitButton';
-import getStockData from '../../Redux/Actions/stockActions';
+import { selectedChemicalsPropTypes } from '../../Constants/proptypes';
 
-const ChemicalInput = () => {
-    const dispatch = useDispatch();
+const ChemicalInputPage = ({ selectedChemicals }) => {
 
-    useEffect(() => {
-        getStockData(dispatch)
-    }, [dispatch])
-
-    const selectedChemicals = useSelector(state => state.selectedChemicals);
-  
     return (
         <Segment>
             <Container>
-                <ChemicalInputQuestion />
-                <ChemicalTable selectedChemicals={selectedChemicals}/>
-                <SubmitButton selectedChemicals={selectedChemicals}/>
+                <ChemicalInput />
+                <ChemicalTable selectedChemicals={selectedChemicals} />
+                <SubmitButton selectedChemicals={selectedChemicals} />
             </Container>
         </Segment>
     );
 }
 
-export default ChemicalInput;
+ChemicalInputPage.propTypes = {
+    selectedChemicals: selectedChemicalsPropTypes.isRequired,
+};
+
+export default ChemicalInputPage;

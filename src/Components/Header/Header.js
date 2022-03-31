@@ -17,7 +17,7 @@ const Header = () => (
                     <Icon name='upload' size='large' />
                     Upload Stock
                 </Item>
-                <Item as='a'>
+                <Item as='a' href='mailto:chemistrytocode@gmail.com'>
                     <Icon name='mail' size='large' />
                     Contact
                 </Item>

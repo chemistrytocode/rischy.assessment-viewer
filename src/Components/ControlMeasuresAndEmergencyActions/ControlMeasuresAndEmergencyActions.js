@@ -3,19 +3,25 @@ import { Grid } from 'semantic-ui-react'
 
 import ControlMeasuresTable from '../ControlMeasuresTable/ControlMeasuresTable';
 import EmergencyActionsTable from '../EmergencyActionsTable/EmergencyActionsTable';
+import { controlMeasuresPropTypes, emergencyActionsPropTypes } from '../../Constants/proptypes';
 
-const ControlMeasuresAndEmergyActions = () => (
+const ControlMeasuresAndEmergencyActions = ({ controlMeasures, emergencyActions}) => (
     <Grid columns={2} stackable textAlign='center'>
         <Grid.Row verticalAlign='middle'>
             <Grid.Column>
-                <ControlMeasuresTable />
+                <ControlMeasuresTable controlMeasures={controlMeasures} />
             </Grid.Column>
 
             <Grid.Column>
-                <EmergencyActionsTable />
+                <EmergencyActionsTable emergencyActions={emergencyActions} />
             </Grid.Column>
         </Grid.Row>
     </Grid>
 );
 
-export default ControlMeasuresAndEmergyActions;
+ControlMeasuresAndEmergencyActions.propTypes = {
+    controlMeasures: controlMeasuresPropTypes.isRequired,
+    emergencyActions: emergencyActionsPropTypes.isRequired
+  };
+
+export default ControlMeasuresAndEmergencyActions;

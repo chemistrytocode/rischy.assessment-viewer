@@ -1,5 +1,5 @@
 import fetchStockData from "../../Utils/fetchStockData/fetchStockData";
-import { stockActionTypes } from '../Constants/actionTypes';
+import { stockActionTypes } from '../../Constants/actionTypes';
 
 const getStockData = async (dispatch) => {
     const stockResponse = await fetchStockData();

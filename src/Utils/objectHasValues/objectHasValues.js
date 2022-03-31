@@ -1,0 +1,1 @@
+export const objectHasValues = (object) => Object.keys(object).length > 1;

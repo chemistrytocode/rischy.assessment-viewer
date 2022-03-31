@@ -1,6 +1,6 @@
-import { riskAssessmentActionTypes } from '../Constants/actionTypes.js';
+import { riskAssessmentActionTypes } from '../../Constants/actionTypes.js';
 
-const initialRiskAssessmentState = [];
+const initialRiskAssessmentState = {};
 
 const riskAssessmentReducer = ({ riskAssessment } = {}) => (state = riskAssessment, { type, payload }) => {
     const riskAssessmentState = state || initialRiskAssessmentState;
@@ -11,6 +11,9 @@ const riskAssessmentReducer = ({ riskAssessment } = {}) => (state = riskAssessme
                 ...riskAssessmentState,
                 ...payload
             }
+        }
+        case riskAssessmentActionTypes.CLEAR_RISK_ASSESSMENT: {
+            return {}
         }
         default:
             return riskAssessmentState;
