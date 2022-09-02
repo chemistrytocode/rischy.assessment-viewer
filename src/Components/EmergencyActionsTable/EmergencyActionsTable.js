@@ -56,7 +56,7 @@ const EmergencyActionsTable = ({ emergencyActions }) => {
 
     return (
         <>
-            <Header as='h1'>Emergency Actions</Header>
+            <Header as='h1' className="EmergencyActionsTitle">Emergency Actions</Header>
             <Label color='red' pointing="below" size="large">If the worst occurs follow these directions:</Label>
             <Table celled selectable striped color="red">
                 <Table.Header>

@@ -17,7 +17,7 @@ const ControlMeasuresTable = ({ controlMeasures }) => {
 
     return (
         <>
-            <Header as='h1'>Control Measures</Header>
+            <Header as='h1' className="ControlMeasuresTitle">Control Measures</Header>
             <Label color='blue' pointing="below" size="large">Take note of the following precautionary measures:</Label>
             <p></p>
             <Table celled selectable striped color="blue">

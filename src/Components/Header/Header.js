@@ -1,8 +1,10 @@
 import React from 'react';
-import { Menu, Container, Segment, Item, Icon } from 'semantic-ui-react'
+import { Menu, Container, Segment, Item, Icon } from 'semantic-ui-react';
+
+import './Header.css';
 
 const Header = () => (
-    <Segment>
+    <Segment className="Header">
         <Menu fixed='top' inverted>
             <Container>
                 <Item as='a'>

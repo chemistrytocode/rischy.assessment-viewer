@@ -1,3 +1,9 @@
 .PASA_Segment {
     margin-bottom: 170px !important;
 }
+
+@media print {
+    .PASA_Segment {
+        display: none;
+    }
+}
